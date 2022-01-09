@@ -9,49 +9,44 @@ class QuickGo < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/maguowei/quick-go/releases/download/v0.3.3/quick-go_0.3.3_Darwin_arm64.tar.gz"
-      sha256 "dea5382658c2b91b44f86b41828ae7d34a2d9eb73781d6a0b03da46004615363"
-
-      def install
-        bin.install "quick-go"
-        ...
-      end
-    end
     if Hardware::CPU.intel?
       url "https://github.com/maguowei/quick-go/releases/download/v0.3.3/quick-go_0.3.3_Darwin_x86_64.tar.gz"
-      sha256 "c186cbb4c937fd0cd188f8a379cc16dce72d551d88872718646151bd92f54912"
+      sha256 "e725aae43a48a5ac9d768ef12ac1b8eecb22083b8befda372f57faf46adea7fc"
 
       def install
         bin.install "quick-go"
-        ...
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/maguowei/quick-go/releases/download/v0.3.3/quick-go_0.3.3_Darwin_arm64.tar.gz"
+      sha256 "aaea229573bf1b7177d88ef3ab404ef64761c0b54efd38a55978dde24f23a311"
+
+      def install
+        bin.install "quick-go"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/maguowei/quick-go/releases/download/v0.3.3/quick-go_0.3.3_Linux_x86_64.tar.gz"
-      sha256 "6831735b7ef4c02fdc1289ea540d2c24e8bdea19f35011947cd0c8a7bce100f3"
-
-      def install
-        bin.install "quick-go"
-        ...
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/maguowei/quick-go/releases/download/v0.3.3/quick-go_0.3.3_Linux_arm64.tar.gz"
-      sha256 "0f524a9ff8c5c88c9014662136fce63632e233b81ce3b1994f075b2c488caead"
+      sha256 "0039c2557915a5d063646fa982931d444b6939e62a3286799fa793513143ab8b"
 
       def install
         bin.install "quick-go"
-        ...
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/maguowei/quick-go/releases/download/v0.3.3/quick-go_0.3.3_Linux_x86_64.tar.gz"
+      sha256 "d3caa9051af4e44959db98fb2f245b977d53470107f011bcf7a1997125cb5659"
+
+      def install
+        bin.install "quick-go"
       end
     end
   end
 
   test do
     system "#{bin}/quick-go --version"
-    ...
   end
 end
