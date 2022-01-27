@@ -5,21 +5,21 @@
 class QuickGo < Formula
   desc "Golang quick start."
   homepage "https://github.com/maguowei/quick-go"
-  version "0.3.3"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/maguowei/quick-go/releases/download/v0.3.3/quick-go_0.3.3_Darwin_x86_64.tar.gz"
-      sha256 "e725aae43a48a5ac9d768ef12ac1b8eecb22083b8befda372f57faf46adea7fc"
+    if Hardware::CPU.arm?
+      url "https://github.com/maguowei/quick-go/releases/download/v0.4.0/quick-go_0.4.0_Darwin_arm64.tar.gz"
+      sha256 "5fdc4fd9aedcaa53bf6e25f752c799f6d149fe05f7b6db59b75116ef98c5293d"
 
       def install
         bin.install "quick-go"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/maguowei/quick-go/releases/download/v0.3.3/quick-go_0.3.3_Darwin_arm64.tar.gz"
-      sha256 "aaea229573bf1b7177d88ef3ab404ef64761c0b54efd38a55978dde24f23a311"
+    if Hardware::CPU.intel?
+      url "https://github.com/maguowei/quick-go/releases/download/v0.4.0/quick-go_0.4.0_Darwin_x86_64.tar.gz"
+      sha256 "d0ee975a9f023c8660d052417ade4b651545d904b36765695680ceea903fb9e6"
 
       def install
         bin.install "quick-go"
@@ -28,17 +28,17 @@ class QuickGo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/maguowei/quick-go/releases/download/v0.3.3/quick-go_0.3.3_Linux_arm64.tar.gz"
-      sha256 "0039c2557915a5d063646fa982931d444b6939e62a3286799fa793513143ab8b"
+    if Hardware::CPU.intel?
+      url "https://github.com/maguowei/quick-go/releases/download/v0.4.0/quick-go_0.4.0_Linux_x86_64.tar.gz"
+      sha256 "92a96143a3f86e3ac117cb43b3d308e1b9ec6ca50f58ce71e35e3ee1d0d27be8"
 
       def install
         bin.install "quick-go"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/maguowei/quick-go/releases/download/v0.3.3/quick-go_0.3.3_Linux_x86_64.tar.gz"
-      sha256 "d3caa9051af4e44959db98fb2f245b977d53470107f011bcf7a1997125cb5659"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/maguowei/quick-go/releases/download/v0.4.0/quick-go_0.4.0_Linux_arm64.tar.gz"
+      sha256 "3599b84d3b86a187a0aaa1f5c96bdf24b91f06776ca51dd9bab7407db3e2c327"
 
       def install
         bin.install "quick-go"
