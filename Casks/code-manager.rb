@@ -12,6 +12,8 @@ cask "code-manager" do
     strategy :github_latest
   end
 
+  depends_on macos: :big_sur
+
   app "code-manager.app"
 
   # 未公证：安装后移除隔离属性，避免 Gatekeeper 首启拦截
