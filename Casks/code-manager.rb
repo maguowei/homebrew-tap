@@ -17,9 +17,9 @@ cask "code-manager" do
   app "code-manager.app"
 
   # 未公证：安装后移除隔离属性，避免 Gatekeeper 首启拦截
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/code-manager.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/code-manager.app"]
   end
 
   zap trash: [
