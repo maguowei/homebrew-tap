@@ -1,6 +1,6 @@
 cask "code-manager" do
-  version "1.8.0"
-  sha256 "8001d685bb835480f97d913db8b9210b1feed287b709fbbea1d1c40405596d0a"
+  version "1.9.0"
+  sha256 "e31ff7f2b681703eaefe6225c5b99072ba2baa21a5fd638a4d1f7b8b082fd7dc"
 
   url "https://github.com/maguowei/code-manager/releases/download/v#{version}/code-manager_#{version}_universal.dmg"
   name "Code Manager"
